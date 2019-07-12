@@ -1,0 +1,7 @@
+B:\Programs\AQJul2019\DotnetTraining\SampleConApp\bin\Debug\SampleConApp.exe.config
+B:\Programs\AQJul2019\DotnetTraining\SampleConApp\bin\Debug\SampleConApp.exe
+B:\Programs\AQJul2019\DotnetTraining\SampleConApp\bin\Debug\SampleConApp.pdb
+B:\Programs\AQJul2019\DotnetTraining\SampleConApp\obj\Debug\SampleConApp.csprojAssemblyReference.cache
+B:\Programs\AQJul2019\DotnetTraining\SampleConApp\obj\Debug\SampleConApp.csproj.CoreCompileInputs.cache
+B:\Programs\AQJul2019\DotnetTraining\SampleConApp\obj\Debug\SampleConApp.exe
+B:\Programs\AQJul2019\DotnetTraining\SampleConApp\obj\Debug\SampleConApp.pdb
