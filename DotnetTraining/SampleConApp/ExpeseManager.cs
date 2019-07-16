@@ -1,5 +1,7 @@
 ﻿using SampleConApp;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 namespace ExpenseDemo
 {
     class Expense
@@ -21,6 +23,20 @@ namespace ExpenseDemo
         {
             string details = string.Format("Date:{0}\nDetail:{1}\nAmount:{2:C}\n", Date.ToLongDateString(), Detail, Amount);
             return details;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if(obj is Expense)
+            {
+                var temp = obj as Expense;
+                return temp.ExpenseID == ExpenseID;
+            }
+            return false;
+        }
+        public override int GetHashCode()
+        {
+            return ExpenseID.GetHashCode() ;
         }
     }
 
@@ -52,6 +68,21 @@ namespace ExpenseDemo
 
     }
 
+    class ListExpenseManager : ExpenseManager
+    {
+        HashSet<Expense> _allExpenes = new HashSet<Expense>();
+        public override void AddNewExpense(Expense ex)
+        {
+            if (!_allExpenes.Add(ex))
+                throw new Exception("ExpenseID already Exists");
+        }
+        public override Expense[] GetAllExpenses()
+        {
+            var data = _allExpenes.ToArray();
+            return data;
+        }
+    }
+
     class MainProgram
     {
         private static void clear()
@@ -60,7 +91,7 @@ namespace ExpenseDemo
             Console.ReadKey();
             Console.Clear();
         }
-        static ExpenseManager mgr = new ExpenseManager();
+        static ExpenseManager mgr = new ListExpenseManager();
         static void createExpense()
         {
             var expense = new Expense
