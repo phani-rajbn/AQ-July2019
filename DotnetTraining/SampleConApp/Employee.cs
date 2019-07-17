@@ -12,20 +12,25 @@ namespace SampleConApp
         public string Empname { get; set; }
         public string EmpAddress { get; set; }
         public double EmpSalary { get; set; }
-
+        public long PhoneNo { get; set; }
         public override bool Equals(object obj)
         {
             if (obj is Employee)
             {
                 var temp = obj as Employee;
-                return temp.Empname == this.Empname;
+                return temp.EmpID == this.EmpID;
             }
             else return false;
         }
         //2 objects are said to be equal if their hashcodes are same and the equals method returns true....
         public override int GetHashCode()
         {
-            return Empname.GetHashCode();
+            return EmpID.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return string.Format($"Name:{Empname}\tAddress:{EmpAddress}\tEmpSalary:{EmpSalary:C},\tEmpPhone:{PhoneNo}");
         }
 
 
