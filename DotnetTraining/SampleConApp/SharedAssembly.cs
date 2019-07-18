@@ -20,8 +20,23 @@ namespace SampleConApp
         static void Main(string[] args)
         {
             //callingMethod();
-            callingMethodThroReflection();
-
+            //callingMethodThroReflection();
+            dllInfo = Assembly.LoadFile(dllFile);
+            classDetails = dllInfo.GetType("AssemblyLib.AssemblyClass");
+            selectedMethod = classDetails.GetMethod("AddFunc");
+            ParameterInfo[] parameters = selectedMethod.GetParameters();
+            object[] pmValues = new object[parameters.Length];
+            int index = 0;
+            foreach (var pm in parameters)
+            {
+                Console.WriteLine("Enter the value of {0} with data type {1}", pm.Name, pm.ParameterType.Name);
+                pmValues[index] = Convert.ChangeType(Console.ReadLine(), pm.ParameterType);
+                index++;
+            }
+            Console.WriteLine("All is set");
+            instance = Activator.CreateInstance(classDetails);
+            var result = selectedMethod.Invoke(instance, pmValues);
+            Console.WriteLine("The result: " + result);
         }
 
         private static void callingMethodThroReflection()
