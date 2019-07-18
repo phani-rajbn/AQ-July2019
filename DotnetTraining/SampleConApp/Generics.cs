@@ -39,10 +39,10 @@ namespace SampleConApp
         {
             DataCollection<Employee> employees = new DataCollection<Employee>();
             employees.AddRecord(new Employee { EmpID = 1, EmpAddress = "BLR", Empname = "Phaniraj", EmpSalary = 45000 });
-            employees.AddRecord(new Employee { EmpID = 1, EmpAddress = "BLR", Empname = "Phaniraj", EmpSalary = 45000 });
-            employees.AddRecord(new Employee { EmpID = 1, EmpAddress = "BLR", Empname = "Phaniraj", EmpSalary = 45000 });
-            employees.AddRecord(new Employee { EmpID = 1, EmpAddress = "BLR", Empname = "Phaniraj", EmpSalary = 45000 });
-            employees.AddRecord(new Employee { EmpID = 1, EmpAddress = "BLR", Empname = "Phaniraj", EmpSalary = 45000 });
+            employees.AddRecord(new Employee { EmpID = 2, EmpAddress = "BLR", Empname = "Phaniraj", EmpSalary = 45000 });
+            employees.UpdateRecord(new Employee { EmpID = 2, EmpAddress = "Bangalore", Empname = "Phaniraj", EmpSalary = 55000 });
+            employees.AddRecord(new Employee { EmpID = 4, EmpAddress = "BLR", Empname = "Phaniraj", EmpSalary = 45000 });
+            employees.AddRecord(new Employee { EmpID = 5, EmpAddress = "BLR", Empname = "Phaniraj", EmpSalary = 45000 });
             var data = employees.GetAllRecords();
             //foreach (var emp in data) Console.WriteLine(emp.Empname);
             //foreach(var emp in employees)
@@ -50,7 +50,7 @@ namespace SampleConApp
 
             var iterator = employees.GetEnumerator();
             while(iterator.MoveNext())
-                Console.WriteLine(iterator.Current.Empname);
+                Console.WriteLine(iterator.Current.EmpAddress);
         }
 
         private static void queueExample()

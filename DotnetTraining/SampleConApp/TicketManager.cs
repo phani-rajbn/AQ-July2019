@@ -76,20 +76,21 @@ namespace SampleConApp
 
         public double CancelTicket(int ticketId)
         {
+            var amount = 0.0;
             table = deSerialize();
             foreach(DataRow row in table.Rows)
             {
                 if(row[0].ToString() == ticketId.ToString())
                 {
-                    var amount = Convert.ToDouble(row[4]);
+                    amount = Convert.ToDouble(row[4]);
                     amount -= (amount * 15 / 100);
                     row.Delete();//Sets the state as delete.
                     table.AcceptChanges();
-                    return amount;
+                    break;
                 }
             }
             serializeData(table);
-            return 0;
+            return amount;
         }
 
         public DataTable FindTickets(Place source, Place destination)
