@@ -7,9 +7,35 @@ namespace SampleConApp
         static void Main(string[] args)
         {
             //simpleArrayExample();
-            multiDimensionalArray();
+            //multiDimensionalArray();
             //jaggedArray();
             //Explore how to create an Array dynamically including the datatype of the Array...
+            dynamicArrayCreation();
+        }
+
+        private static void dynamicArrayCreation()
+        {
+            //get the size
+            var size = Prompt.GetNumber("Enter the size of array");
+            //get the type
+            string typeName = Prompt.GetString("Enter the CTS type for the Array");
+            Type type = Type.GetType(typeName);
+            if(type == null)
+            {
+                Console.WriteLine("Invalid CTS Type");
+                return;
+            }
+            //create the array
+            Array array = Array.CreateInstance(type, size);
+            //set the values
+            for (int i = 0; i < size; i++)
+            {
+                Console.WriteLine("Enter the value for the type " + type.Name);
+                array.SetValue(Convert.ChangeType(Console.ReadLine(), type), i);
+            }
+            Console.WriteLine("All the values are set");
+            //display all
+            foreach (var value in array) Console.WriteLine( value);
         }
 
         private static void jaggedArray()
