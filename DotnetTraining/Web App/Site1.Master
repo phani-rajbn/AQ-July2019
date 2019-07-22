@@ -30,10 +30,10 @@
                         <Items>
                             <asp:MenuItem Text="Home Page" NavigateUrl="~/HomePage.aspx" />
                             <asp:MenuItem Text="Register" NavigateUrl="~/RegisterForm.aspx" />
-                            <asp:MenuItem Text="Validate" />
-                            <asp:MenuItem Text="View Data" />
+                            <asp:MenuItem Text="Validate" NavigateUrl="~/ValidationPage.aspx" />
+                            <asp:MenuItem Text="View Data" NavigateUrl="~/ConformationPage.aspx"/>
                             <asp:MenuItem Text="Data Binding" />
-                            <asp:MenuItem Text="State Management" />
+                            <asp:MenuItem Text="State Management"  NavigateUrl="~/SessionManagement.aspx" />
                             <asp:MenuItem Text="Caching" />
                         </Items>
                         <StaticHoverStyle BackColor="#990000" ForeColor="White" />

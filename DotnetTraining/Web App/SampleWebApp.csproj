@@ -67,12 +67,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ConformationPage.aspx" />
     <Content Include="Global.asax" />
     <Content Include="HomePage.aspx" />
     <Content Include="RegisterForm.aspx" />
+    <Content Include="ValidationPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConformationPage.aspx.cs">
+      <DependentUpon>ConformationPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConformationPage.aspx.designer.cs">
+      <DependentUpon>ConformationPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -97,6 +106,13 @@
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ValidationPage.aspx.cs">
+      <DependentUpon>ValidationPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ValidationPage.aspx.designer.cs">
+      <DependentUpon>ValidationPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

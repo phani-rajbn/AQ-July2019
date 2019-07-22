@@ -8,6 +8,12 @@
         Enter the Email Address: <asp:TextBox runat="server" ID="txtEmail"/>
     </p>
     <p>
+        Enter the Password:
+        <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
+        ReType the Password:
+        <asp:TextBox ID="txtRetype" runat="server" TextMode="Password"></asp:TextBox>
+    </p>
+    <p>
         Enter the Qualification: <asp:TextBox runat="server" ID="txtDetails"/>
     </p>
     <p>
