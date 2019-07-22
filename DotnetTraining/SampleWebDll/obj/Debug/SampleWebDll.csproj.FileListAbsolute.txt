@@ -1,0 +1,6 @@
+B:\Programs\AQJul2019\DotnetTraining\SampleWebDll\bin\Debug\SampleWebDll.dll
+B:\Programs\AQJul2019\DotnetTraining\SampleWebDll\bin\Debug\SampleWebDll.pdb
+B:\Programs\AQJul2019\DotnetTraining\SampleWebDll\obj\Debug\SampleWebDll.csprojAssemblyReference.cache
+B:\Programs\AQJul2019\DotnetTraining\SampleWebDll\obj\Debug\SampleWebDll.csproj.CoreCompileInputs.cache
+B:\Programs\AQJul2019\DotnetTraining\SampleWebDll\obj\Debug\SampleWebDll.dll
+B:\Programs\AQJul2019\DotnetTraining\SampleWebDll\obj\Debug\SampleWebDll.pdb
