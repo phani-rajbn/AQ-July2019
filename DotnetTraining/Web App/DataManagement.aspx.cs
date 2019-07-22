@@ -34,6 +34,22 @@ namespace SampleWebApp
             lblProductID.Text = item.ProductID.ToString();
             lblName.Text = item.ProductName;
             lblPrice.Text = item.ProductCost.ToString();
+            Session["selected"] = item;
+        }
+
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            var set = Session["myCart"] as HashSet<Product>;
+            var item = Session["selected"] as Product;
+            item.Quantity = int.Parse(dpCount.Text);
+            if (!set.Add(item))
+            {
+                var selectedItem = set.FirstOrDefault(p => p.ProductID == item.ProductID);
+                selectedItem.Quantity = item.Quantity;
+            }
+            Session["myCart"] = set;
+            Response.Redirect("DataManagement.aspx");
         }
     }
 }

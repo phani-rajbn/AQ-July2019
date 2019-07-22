@@ -18,7 +18,14 @@
             <hr />
             <p>
                 ASP.NET is a server side technology for developing rich internet Apps using the .NET Technology. It is productive and easy to develop. It runs on IIS or a Temp Server created by VS called IIS EXPRESS. Please click on the links below to find more details about it.
+                
             </p>Happy Learing!!!!<br />
+            <p style="text-align:right">
+                
+                <asp:LinkButton ID="lnkButton" runat="server" OnClick="lnkButton_Click">
+                    <asp:Label BorderColor="Red" BorderStyle="Double" ID="lblCart" runat="server" Text="Cart(0)"></asp:Label>
+                </asp:LinkButton>
+            </p>
              <table style="width:90%; margin-left:20pt; vertical-align:top">
             <tr style="vertical-align:top">
                 <td class="auto-style1">

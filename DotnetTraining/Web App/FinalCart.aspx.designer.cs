@@ -10,42 +10,33 @@
 namespace SampleWebApp {
     
     
-    public partial class Site1 {
+    public partial class FinalCart {
         
         /// <summary>
-        /// form1 control.
+        /// rpCart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Repeater rpCart;
         
         /// <summary>
-        /// lnkButton control.
+        /// lblFinalPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkButton;
+        protected global::System.Web.UI.WebControls.Label lblFinalPrice;
         
         /// <summary>
-        /// lblCart control.
+        /// btnPayment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCart;
-        
-        /// <summary>
-        /// mainContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder mainContent;
+        protected global::System.Web.UI.WebControls.Button btnPayment;
     }
 }

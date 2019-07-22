@@ -11,12 +11,18 @@ namespace SampleWebApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            var items = Session["myCart"] as HashSet<Product>;
+            lblCart.Text = string.Format("Cart({0})", items.Count);
         }
 
         protected void Unnamed1_MenuItemClick(object sender, MenuEventArgs e)
         {
 
+        }
+
+        protected void lnkButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("FinalCart.aspx");
         }
     }
 }

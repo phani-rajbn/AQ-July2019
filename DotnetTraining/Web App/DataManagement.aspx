@@ -20,7 +20,7 @@
                         <asp:ListItem>4</asp:ListItem>                        
                     </asp:dropdownlist>
                 </p>
-                <asp:button text="Add To Cart" runat="server" ID="btnAdd" />
+                <asp:button text="Add To Cart" runat="server" ID="btnAdd" OnClick="btnAdd_Click" />
             </td>
         </table>
     </div>
