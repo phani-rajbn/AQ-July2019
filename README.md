@@ -5,3 +5,4 @@ Build the project
 Open the Developer Command Prompt for Visual Studio as Administrator. 
 Move to the Executing Directory of the DLL where the actual DLL is residing. 
 gacutil -i DllName.dll
+Web Apps contain ASP.NET Features.
