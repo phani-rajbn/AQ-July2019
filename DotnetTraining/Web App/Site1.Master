@@ -21,7 +21,7 @@
                 
             </p>Happy Learing!!!!<br />
             <p style="text-align:right">
-                
+                <asp:Label ID="lblUser" runat="server" />
                 <asp:LinkButton ID="lnkButton" runat="server" OnClick="lnkButton_Click">
                     <asp:Label BorderColor="Red" BorderStyle="Double" ID="lblCart" runat="server" Text="Cart(0)"></asp:Label>
                 </asp:LinkButton>
@@ -39,7 +39,7 @@
                             <asp:MenuItem Text="Register" NavigateUrl="~/RegisterForm.aspx" />
                             <asp:MenuItem Text="Validate" NavigateUrl="~/ValidationPage.aspx" />
                             <asp:MenuItem Text="View Data" NavigateUrl="~/ConformationPage.aspx"/>
-                            <asp:MenuItem Text="Data Binding" />
+                            <asp:MenuItem Text="Data Binding" NavigateUrl="~/DataManagement.aspx" />
                             <asp:MenuItem Text="State Management"  NavigateUrl="~/SessionManagement.aspx" />
                             <asp:MenuItem Text="Caching" />
                         </Items>

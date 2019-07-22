@@ -11,6 +11,14 @@ namespace SampleWebApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (this.Page.User.Identity.IsAuthenticated)
+            {
+                lblUser.Text = "Welcome Mr. " + Page.User.Identity.Name;
+            }
+            else
+            {
+                lblUser.Text = "Welcome Guest!!!!";
+            }
             var items = Session["myCart"] as HashSet<Product>;
             lblCart.Text = string.Format("Cart({0})", items.Count);
         }
