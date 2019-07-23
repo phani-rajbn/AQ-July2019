@@ -1,0 +1,16 @@
+﻿@model SampleMvcApp.Models.EmpTable
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Update Form for the Employee</h2>
+<form method="post">
+    <p>@*Employee ID: @Html.DisplayFor(m => m.EmpID)*@
+    @Html.HiddenFor(m=>m.EmpID)</p>
+    <p>Employee Name: @Html.EditorFor(m => m.EmpName)</p>
+    <p>Employee Address: @Html.EditorFor(m => m.EmpAddress)</p>
+    <p>Employee Salary: @Html.EditorFor(m => m.EmpSalary)</p>
+    <p>Employee Phone: @Html.EditorFor(m => m.EmpPhone)</p>
+    <p><button>Save Changes</button></p>
+</form>

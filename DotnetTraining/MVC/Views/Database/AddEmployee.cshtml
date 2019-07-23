@@ -1,0 +1,15 @@
+﻿@model SampleMvcApp.Models.EmpTable
+
+@{
+    ViewBag.Title = "AddEmployee";
+}
+
+<h2>Register New Employee</h2>
+<form method="post" action="SaveData">
+    <p>Employee ID: @Html.EditorFor(m => m.EmpID)</p>
+    <p>Employee Name: @Html.EditorFor(m => m.EmpName)</p>
+    <p>Employee Address: @Html.EditorFor(m => m.EmpAddress)</p>
+    <p>Employee Salary: @Html.EditorFor(m => m.EmpSalary)</p>
+    <p>Employee Phone: @Html.EditorFor(m => m.EmpPhone)</p>
+    <p><button>Save Changes</button></p>
+</form>

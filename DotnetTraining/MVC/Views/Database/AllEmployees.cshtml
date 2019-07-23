@@ -1,0 +1,29 @@
+﻿@model List<SampleMvcApp.Models.EmpTable>
+
+@{
+    ViewBag.Title = "AllEmployees";
+}
+
+<h2>List of Employees</h2>
+<table border="1" class="table table-bordered table-hover">
+    <tr>
+        <th>Employee ID</th>
+        <th>Employee Name</th>
+        <th>Employee Address</th>
+        <th>Employee Salary</th>
+        <th>Employee Contact</th>
+        <th>Options</th>
+    </tr> 
+    @foreach (var emp in Model)
+    {
+    <tr>
+        <td>@emp.EmpID</td>
+        <td>@emp.EmpName</td>
+        <td>@emp.EmpAddress</td>
+        <td>@emp.EmpSalary</td>
+        <td>@emp.EmpPhone</td>
+        <td>@Html.ActionLink("Change", "Edit", new { id = emp.EmpID })
+            @Html.ActionLink("X", "Delete", new { id = emp.EmpID })</td>
+    </tr>
+    }
+    </table>

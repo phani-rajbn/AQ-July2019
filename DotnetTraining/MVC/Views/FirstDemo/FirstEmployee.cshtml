@@ -1,0 +1,22 @@
+﻿@model SampleMvcApp.Models.Employee
+
+@{
+    Layout = null;       
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FirstEmployee</title>
+</head>
+<body>
+    <div>
+        <h1>Details of Mr.@Model.EmpName</h1>
+        <hr />
+        <p>The Name: @Model.EmpName</p>
+        <p>The Address:@Model.EmpAddress</p>
+        <p>The Employee's ID: @Model.EmpID</p>
+    </div>
+</body>
+</html>

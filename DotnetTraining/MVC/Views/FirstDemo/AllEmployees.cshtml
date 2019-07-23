@@ -1,0 +1,36 @@
+﻿@model List<SampleMvcApp.Models.Employee>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AllEmployees</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <h1 class="jumbotron">List of Employees with us</h1>
+        <table border="1" class="table table-bordered table-hover">
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>Employee Address</th>
+                <th>Options</th>
+            </tr>
+            @foreach (var emp in Model)
+            {
+                <tr>
+                    <td>@emp.EmpID</td>
+                    <td>@emp.EmpName</td>
+                    <td>@emp.EmpAddress</td>
+                    <td class="btn btn-info">@Html.ActionLink("Edit", "Edit", new { id=emp.EmpID })</td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
