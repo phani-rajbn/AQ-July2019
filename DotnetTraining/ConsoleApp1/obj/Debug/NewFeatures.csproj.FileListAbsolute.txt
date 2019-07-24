@@ -1,0 +1,7 @@
+C:\Users\phani\source\repos\AdvancedDotnet\ConsoleApp1\bin\Debug\NewFeatures.exe.config
+C:\Users\phani\source\repos\AdvancedDotnet\ConsoleApp1\bin\Debug\NewFeatures.exe
+C:\Users\phani\source\repos\AdvancedDotnet\ConsoleApp1\bin\Debug\NewFeatures.pdb
+C:\Users\phani\source\repos\AdvancedDotnet\ConsoleApp1\obj\Debug\NewFeatures.csprojAssemblyReference.cache
+C:\Users\phani\source\repos\AdvancedDotnet\ConsoleApp1\obj\Debug\NewFeatures.csproj.CoreCompileInputs.cache
+C:\Users\phani\source\repos\AdvancedDotnet\ConsoleApp1\obj\Debug\NewFeatures.exe
+C:\Users\phani\source\repos\AdvancedDotnet\ConsoleApp1\obj\Debug\NewFeatures.pdb
