@@ -1,0 +1,5 @@
+﻿Web API is a ASP.NET's Framework for developing REST Services. 
+Introduced in 2013 for developing REST services in .NET. 
+Its design is based on the MVC but with no View in it. 
+It has a controller which implements an interface called System.Web.Http.IHttpController which contains Actions that are executed thro HTTP VERBS: GET, PUT, POST and DELETE. 
+The output of the Actions are rendered as both XML and JSON. XML Parsers will read the data as XML Document and JSON readers would read it as JSON Result. 

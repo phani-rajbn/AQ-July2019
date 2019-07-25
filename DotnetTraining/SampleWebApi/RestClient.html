@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Apple123</title>
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <style>
+        .row{
+            display:inline-block;
+            width:40%;
+            text-align:center;
+            vertical-align:top;
+            border:2px solid red;
+            border-radius:5px;
+            margin:3px;
+            padding:5px;
+        }
+    </style>
+    <script>
+        var url = "api/Employees";
+        
+        function populateData() {
+            $(".row:eq(0)").show(2000);
+            $("#tblRecords").find("tr:gt(0)").remove();
+            $.get(url, (data) => {
+                debugger;
+                $.each(data, (i, v) => {
+                    var r = '<tr><td>' + v.EmpID + '</td><td>';
+                    r += v.EmpName + '</td><td>';
+                    r += v.EmpAddress + '</td><td>';
+                    r += "<a class='edit' empid='" + v.EmpID + "' href = '#' > Details</a ></td ></tr > ";
+                    $("#tblRecords").append(r);
+                });
+                $('.edit').click(function(){
+                    $(".row:eq(1)").show(2000);
+                    //var id = $(this).parent().siblings("td:eq(0)").text();
+                    var id = $(this).attr("empid");
+                    alert(id);
+                    var temp = url + '/' + id;
+                    $.get(temp, (data) => {
+                        $('#txtID').val(data.EmpID);
+                        $('#txtName').val(data.EmpName);
+                        $('#txtAddr').val(data.EmpAddress);
+                    })
+                })
+            });
+
+        }
+        $(document).ready(() => {
+            $(".row:lt(2)").hide(2000);
+            $("a:eq(0)").click(() => {
+                populateData();                
+            })
+            $("#btnSave").click(()=> {
+                var emp = {};
+                emp.EmpID = $("#txtNewID").val();
+                emp.EmpName = $("#txtNewName").val();
+                emp.EmpAddress = $("#txtNewAddr").val();
+                emp.DeptID = 3;
+                $.post(url, emp, (data) => {
+                    alert(data);
+                });
+            }) 
+        })
+    </script>
+    <h1>Application Programming</h1>
+    <div>
+        <a href="#">View All</a>
+    </div>
+    <div>
+        <div class="row">
+            <table id="tblRecords" border="1">
+                <tr>
+                    <td>Employee ID</td>
+                    <td>Employee Name</td>
+                    <td>Employee Address</td>
+                    <td>Options</td>
+                </tr>
+            </table>
+        </div>
+        <div class="row">
+            <h2>Details of the selected Employee</h2>
+            <p><input placeholder="Employee ID" id="txtID" /></p>
+            <p><input placeholder="Employee Name" id="txtName" /></p>
+            <p><input placeholder="Employee Address" id="txtAddr" /></p>
+            <p><button type="button">Save changes</button></p>
+        </div>
+        <div class="row">
+            <h2>Details of the New Employee</h2>
+            <p><input placeholder="Employee ID" id="txtNewID" /></p>
+            <p><input placeholder="Employee Name" id="txtNewName" /></p>
+            <p><input placeholder="Employee Address" id="txtNewAddr" /></p>
+            <p><button type="button" id="btnSave">Add</button></p>
+        </div>
+    </div>
+</body>
+</html>
