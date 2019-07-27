@@ -1,0 +1,35 @@
+﻿<h2>List of the Visits Made</h2>
+<form>
+    <p>
+        Enter the ID:<input type="text" id="txtPId" placeholder="Enter the ID" />
+        <button type="button">Get Details</button>
+    </p>
+</form>
+<p style="display:inline-block">Patient Name:<span id="spName"></span></p>
+<p style="text-align:right;display:inline-block">Patient Contact No:<span id="spContact"></span></p>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Disease</th>
+        <th>Doctor</th>
+        <th>Amount</th>
+    </tr>
+</table>
+<script>
+    $(document).ready(() => {
+        $("button").click(function () {
+            $("table").find("tr:gt(0)").remove();
+            var id = $("#txtPId").val();
+            var url = 'api/PatientInfo/' + id;
+            $.get(url, (data) => {
+                $("#spName").text(data[0].Name);
+                $("#spContact").text(data[0].Contact);
+                $.each(data, (i, v) => {
+                    var row = '<tr><td>' + v.Disease + "</td><td>";
+                    row += v.Doctor + "</td><td>";
+                    row += v.Amount + "</td><tr>";
+                    $("table").append(row);
+                })
+            })
+        })
+    })
+</script>

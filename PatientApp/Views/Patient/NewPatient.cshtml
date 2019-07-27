@@ -1,0 +1,65 @@
+﻿@using System.Linq
+@model PatientApp.Models.PatientTable
+@{
+    var list = new List<SelectListItem>();
+}
+<h2>New Patient Registration</h2>
+@using (Html.BeginForm())
+{
+    <p>
+        Enter the Patient ID:@Html.EditorFor(m => m.PatientID)
+    </p>
+    <p>
+        Enter the Patient Name:@Html.EditorFor(m => m.PatientName)
+    </p>
+    <p>
+        Enter the Contact No:@Html.EditorFor(m => m.PatientContact)
+    </p>
+
+    <p>
+        Enter the Health Compliant:@Html.EditorFor(m => m.Disease, new { })
+    </p>
+    <p>
+        Select the Doctor:@Html.DropDownListFor(m => m.DoctorID, list)
+    </p>
+    <p>
+        Total Fees: @Html.EditorFor(m=>m.Amount)
+    </p>
+    <p>
+        <input type="submit" value="Register" />
+    </p>
+}
+<script type="text/javascript">
+    $(document).ready(() => {
+        $("#PatientID").change(function () {
+            var id = $('#PatientID').val();
+            var url = "Patient/PId/" + id;
+            $.get(url, (data) => {
+                $("#PatientID").val(data.PatientID);
+                $("#PatientName").val(data.PatientName);
+                $("#PatientContact").val(data.PatientContact);
+            });
+        })
+        $('#Disease').change(function () {
+            $("#DoctorID").html("");
+            var id = $('#Disease').val();
+            var url = 'Patient/FindDoctors/' + id;
+            $.get(url, (data) => {
+                if (data.length == 0) {
+                    alert("No Doctors available with us for this Treatment");
+                    return;
+                }
+                $.each(data, (i, v) => {
+                    $("#DoctorID").append("<option value='" + v.DoctorID + "'>" + v.Doctor + "</option>");
+                })
+            });
+        });
+        $("#DoctorID").click(function () {
+            var id = $(this).val();
+            var url = 'Patient/Fees/' + id;
+            $.get(url, (data) => {
+                $("#Amount").val(data);
+            });
+        })
+    })
+</script>

@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    var options =
+    new AjaxOptions
+    {
+        UpdateTargetId = "ajaxArea",
+        InsertionMode = InsertionMode.Replace
+    };
+}
+
+<h2>Patient Record System</h2>
+<div>
+    @Ajax.ActionLink("New Patient", "NewPatient", options)
+    @Ajax.ActionLink("Find Patient", "FindInfo", options)
+</div>
+<div id="ajaxArea">
+
+</div>
