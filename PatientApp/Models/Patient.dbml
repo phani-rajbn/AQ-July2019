@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AQDB" Class="PatientDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=AQDB;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="AQDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DoctorTable" Member="DoctorTables">
+    <Type Name="DoctorTable">
+      <Column Name="DoctorID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Doctor" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Speciality" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Fees" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="DoctorTable_PatientTable" Member="PatientTables" ThisKey="DoctorID" OtherKey="DoctorID" Type="PatientTable" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PatientTable" Member="PatientTables">
+    <Type Name="PatientTable">
+      <Column Name="EntryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PatientID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PatientName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PatientContact" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Disease" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DoctorID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="DoctorTable_PatientTable" Member="DoctorTable" ThisKey="DoctorID" OtherKey="DoctorID" Type="DoctorTable" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
